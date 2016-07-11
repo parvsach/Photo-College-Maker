@@ -1,0 +1,19 @@
+{
+  "name": "ImageEditor",
+  "version": "0.0.1",
+  "description": "Photo College Maker",
+  "main": "",
+  "author": {
+    "name": "Parveen Sachdeva",
+    "email": ""
+  },
+  "dependencies": {
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-cssmin": "^0.14.0",
+    "grunt-contrib-jshint": "0.12.0",
+    "grunt-contrib-uglify": "^0.11.0"
+    
+  }
+}

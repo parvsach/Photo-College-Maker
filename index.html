@@ -1,0 +1,68 @@
+﻿<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="Dest/styles.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.3.js"></script>
+    <script src="Scripts/jquery_code.js"></script>
+    <script type="text/javascript" src="Dest/bundle.min.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/FileUploadCtrl.js"></script>
+</head>
+<body>
+
+    <header>
+        <h3>Photo College Maker</h3>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="img-edit" id="droppa">
+                    <div class="drop"><span style="font-size:18px;">Drop Image Here</span></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <footer ng-app="myApp">
+        <div class="row" id="myCtrl" ng-controller="FileUploadCtrl">
+            <div class="col-md-8 col-sm-8 slider-nav">
+
+                <div style="float: left; padding-top: 20px; width: 100%;">
+                    <!--<span class="glyphicon glyphicon-chevron-left left-icon" ng-click="prev()"></span>-->
+                    <span class="glyphicon glyphicon-chevron-right right-icon" ng-click="next()"></span>
+                    <div id="thumbnail-slider">
+
+                        <div class="inner">
+                            <input type="hidden" id="image_id" />
+
+                            <div class="img-header owl-carousel owl-theme">
+                                <div class="img-nav" ng-repeat="step in stepsModel track by $index" ng-class="{ 'selected-image': $index === selectIdx }">
+                                    <img class="thumb" style="float:left; width:125px; height:125px; margin-top:4px; margin-right:4px;" id="{{'show_' + $index}}" ng-click="AddBorder($index)" src="{{step}}" />
+                                </div>
+
+                            </div><input type="hidden" id="img_no" value="0">
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4">
+                <div class="upload">
+                    <div class="glyphicon glyphicon-plus icon-upload">
+                        <b style="float:right; margin-left:5px;">
+                            <label for="UploadFile" style="font-size:23px; margin-top:-8px; margin-left:5px; cursor:pointer;">Upload</label>
+                            <input type='file' id="UploadFile" style="display:none;" class="upload-file" onchange="angular.element(this).scope().imageUpload(this)" />
+                        </b>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+  
+    
+</body>
+</html>
